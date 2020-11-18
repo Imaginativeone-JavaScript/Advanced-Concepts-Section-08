@@ -1,5 +1,8 @@
 - [ ] Section 8: OOP vs FP 00/03 | 26min
 	- [ ] 130. Composition vs Inheritance | 16min
+	  - Inheritance tends to focus on a Superclass that is extended to smaller pieces that add or overwrite things
+		- Composition tends to focus on smaller pieces to create something bigger
+		- Inheritance can have problems that composition solves
 	- [ ] 131. OOP vs FP | 4min
 	- [ ] 132. OOP vs FP 2 | 5min
 - [ ] Section 9: Asynchronous JavaScript 00/011 | 1hr 56min
