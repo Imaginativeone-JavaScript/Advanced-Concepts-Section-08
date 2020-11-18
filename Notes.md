@@ -11,6 +11,7 @@
 			 - "What it has", What things do to data
 
  With these classes, let's say the character needs to add a sleep() method:
+ 
 	```javascript
 	class Character {
 		constructor(name, weapon) {
