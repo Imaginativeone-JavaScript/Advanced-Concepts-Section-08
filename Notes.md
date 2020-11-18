@@ -43,7 +43,31 @@
 	- All my subclasses that extend from character now have the sleep() method.
 	- However, with such "tight coupling", if the addition of the sleep class breaks the subclasses - I've got a problem that ripples down through the subclasses (Potential Fragile Base Class Problem).
 
-	- Potential "Hierarchy Problem": What if I have two different kinds of elves, a "Junior Elf" vs a "Boss Elf". What happens if the Junior Elf gets promoted temporarily?
+	- Potential "Hierarchy Problem": What if I have two different kinds of elves, a "Junior Elf" vs a "Boss Elf". What happens if the Junior Elf gets promoted temporarily? Also, I may want a simple Junior Elf that comes with (an unwanted) giant collection of capabilities from parent classes.
+
+	- If I know that Inheritance can have (Complexity) problems, how do I fix those problems with Composition?
+	- Remove all the methods
+
+	```javascript
+	function getAttack(character) {
+		return Object.assign({}, character, { attackFn () => {} });
+	}
+
+	function Elf(name, weapon, type) {
+		let elf = {
+			name,
+			weapon,
+			type
+		}
+
+		// Add abilities to the elf
+		return getAttack(elf)
+	}
+
+	// Pseudocode
+	Elf  = attack() + sleep()
+	Ogre = attack() + sleep() + makeFort()
+	```
 
 	- [ ] 131. OOP vs FP | 4min
 	- [ ] 132. OOP vs FP 2 | 5min
