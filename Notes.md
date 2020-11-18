@@ -70,8 +70,17 @@
 	Ogre = attack() + sleep() + makeFort()
 	```
 
-	- [ ] 131. OOP vs FP | 4min
 	- [ ] 132. OOP vs FP 2 | 5min
+	  - Key differences
+		  - FP: many operations for which the data is fixed
+			  - stateless, we don't modify state, state is immutable
+				- functions are pure, aim for no side effects
+				  - great for parallel computing
+			- OOP: few operations on common data
+			  - stateful, we are modifying state
+				- many side effects
+				  - not-great for parallel computing
+			- FP and OOP **can** be combined (React Object Example, React FP Example)
 - [ ] Section 9: Asynchronous JavaScript 00/011 | 1hr 56min
 	- [ ] 133. Section Overview | 5min Resources
 	- [ ] 134. Quick Note: Upcoming Videos | 1min
