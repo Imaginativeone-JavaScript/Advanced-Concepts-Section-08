@@ -3,6 +3,48 @@
 	  - Inheritance tends to focus on a Superclass that is extended to smaller pieces that add or overwrite things
 		- Composition tends to focus on smaller pieces to create something bigger
 		- Inheritance can have problems that composition solves
+		  - Structure of our code
+			  - "What it is", What things are
+				- Data, methods, actions, and functions that act upon that data
+		- Composition
+		  - Structure of our code
+			 - "What it has", What things do to data
+
+ With these classes, let's say the character needs to add a sleep() method:
+	```javascript
+	class Character {
+		constructor(name, weapon) {
+			this.name = name;
+			this.weapon = weapon;
+		}
+		attack() {
+			return 'attack with ' + this.weapon
+		}
+		sleep() {} // This method is added
+	}
+
+	class Elf extends Character {
+		constructor(name, weapon, type) {
+			super(name, weapon)
+			console.log('What am I?', this);
+			this.type = type;
+		}
+	}
+
+	class Ogre extends Character {
+		constructor(name, weapon, color) {
+			super(name, weapon)
+			console.log('What am I?', this);
+			this.type = type;
+		}
+	}
+	```
+
+	- All my subclasses that extend from character now have the sleep() method.
+	- However, with such "tight coupling", if the addition of the sleep class breaks the subclasses - I've got a problem that ripples down through the subclasses (Potential Fragile Base Class Problem).
+
+	- Potential "Hierarchy Problem": What if I have two different kinds of elves, a "Junior Elf" vs a "Boss Elf". What happens if the Junior Elf gets promoted temporarily?
+
 	- [ ] 131. OOP vs FP | 4min
 	- [ ] 132. OOP vs FP 2 | 5min
 - [ ] Section 9: Asynchronous JavaScript 00/011 | 1hr 56min
